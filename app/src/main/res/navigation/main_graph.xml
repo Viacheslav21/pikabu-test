@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/feedFragment">
+
+
+    <action
+        android:id="@+id/navigateToFeedWithAction"
+        app:destination="@id/feedFragment">
+        <argument
+            app:argType="com.pikabu.test.ui.feed.FeedsDisplayType"
+            android:name="type"/>
+    </action>
+
+
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.pikabu.test.ui.feed.FeedFragment"
+        android:label="RecordVideoScreen">
+        <action
+            android:id="@+id/action_recordVideoScreen_to_selectMusicScreen"
+            app:destination="@id/feedDetailFragment"
+            app:enterAnim="@anim/slide_out_bottom" />
+
+        <argument
+            app:argType="com.pikabu.test.ui.feed.FeedsDisplayType"
+            android:defaultValue="FEEDS"
+            android:name="type"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/feedDetailFragment"
+        android:name="com.pikabu.test.ui.feed.detail.FeedDetailFragment"
+        android:label="feedDetailFragment">
+
+        <argument
+            android:name="feed"
+            app:argType="com.pikabu.test.ui.feed.FeedData" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/noInternetFragment"
+        android:name="com.pikabu.test.ui.internet.NoInternetFragment"
+        android:label="NoInternetFragment"
+        tools:layout="@layout/layout_no_internet" />
+</navigation>

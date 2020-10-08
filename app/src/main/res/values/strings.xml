@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">pikabu-test</string>
+    <string name="base_url">https://pikabu.ru/page/interview/mobile-app/test-api/</string>
+    <string name="no_data">No data</string>
+    <string name="no_internet">No Internet</string>
+</resources>
